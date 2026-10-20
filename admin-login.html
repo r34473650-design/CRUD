@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Admin Login | CRUDLAB</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="auth-page">
+  <main class="container">
+    <div class="auth-wrap">
+      <div class="brand-mark text-center mb-4">CRUD<span>LAB</span></div>
+      <div class="auth-card">
+        <p class="eyebrow">AREA TERBATAS</p>
+        <h1 class="h3 font-weight-bold mb-2">Login admin</h1>
+        <p class="text-muted mb-4">Halaman masuk khusus pengelola konten.</p>
+        <div id="alertBox" class="alert d-none" role="alert"></div>
+        <form id="adminLoginForm">
+          <div class="form-group"><label for="username">Username admin</label><input class="form-control form-control-lg" id="username" autocomplete="username" placeholder="Username" required></div>
+          <div class="form-group"><label for="password">Password</label><input class="form-control form-control-lg" type="password" id="password" autocomplete="current-password" placeholder="Password admin" required></div>
+          <button class="btn btn-primary btn-lg btn-block mt-4" type="submit">Masuk ke dashboard →</button>
+        </form>
+        <p class="small text-muted mt-4 mb-0">Demo lokal: username <code>admin</code>, password <code>admin123</code>.</p>
+      </div>
+      <p class="auth-footnote"><a href="index.html">← Kembali ke halaman publik</a></p>
+    </div>
+  </main>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/admin-auth.js"></script>
+</body>
+</html>

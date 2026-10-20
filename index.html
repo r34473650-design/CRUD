@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Beranda | CRUDLAB</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="public-page">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white public-nav">
+    <div class="container">
+      <a class="navbar-brand brand-mark" href="index.html">CRUD<span>LAB</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#publicNav" aria-controls="publicNav" aria-expanded="false" aria-label="Buka navigasi">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="publicNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#katalog">Katalog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+        </ul>
+        <!-- Tidak ada tautan login di halaman publik. Admin membuka admin-login.html langsung melalui URL. -->
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-section" id="beranda">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 py-5">
+          <span class="hero-kicker"><span class="status-dot"></span> INFORMASI PUBLIK</span>
+          <h1 class="hero-title mt-4">Temukan informasi<br><span>yang kamu butuhkan.</span></h1>
+          <p class="hero-copy mt-3">Selamat datang di halaman informasi kami. Jelajahi daftar data yang telah dipublikasikan oleh admin.</p>
+          <a href="#katalog" class="btn btn-primary btn-lg mt-3">Jelajahi informasi <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="hero-art">
+            <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+            <div class="art-card art-card-main"><div class="art-card-top"><span></span><span></span><span></span></div><div class="art-lines"><i></i><i></i><i></i></div><div class="art-tile">✦</div></div>
+            <div class="art-float float-a">✓ Data terbaru</div><div class="art-float float-b">CRUDLAB / PUBLIC</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container public-content" id="katalog">
+      <div class="section-heading">
+        <div><p class="eyebrow mb-2">KATALOG INFORMASI</p><h2 class="h2 font-weight-bold mb-2">Informasi terbaru</h2><p class="text-muted mb-0">Data yang tampil di sini dikelola oleh admin.</p></div>
+        <div class="public-search"><span aria-hidden="true">⌕</span><input id="publicSearch" type="search" class="form-control" placeholder="Cari informasi..." aria-label="Cari informasi"></div>
+      </div>
+      <div id="publicEmpty" class="public-empty">
+        <div class="empty-icon">▤</div><h3 class="h5 font-weight-bold">Belum ada informasi</h3><p class="text-muted mb-0">Silakan kembali lagi nanti. Informasi baru akan muncul setelah dipublikasikan oleh admin.</p>
+      </div>
+      <div id="publicItems" class="row"></div>
+    </section>
+
+    <section class="about-section" id="tentang">
+      <div class="container">
+        <div class="about-box">
+          <div><p class="eyebrow mb-2">TENTANG HALAMAN INI</p><h2 class="h3 font-weight-bold mb-2">Sederhana, jelas, dan mudah diakses.</h2><p class="text-muted mb-0">Halaman ini bersifat publik. Pengunjung tidak perlu membuat akun atau login untuk melihat informasi yang tersedia.</p></div>
+          <div class="about-symbol">✳</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="public-footer"><div class="container d-flex flex-column flex-sm-row justify-content-between"><span>© <span id="year"></span> CRUDLAB</span><span>Halaman publik · Tidak perlu login</span></div></footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/public.js"></script>
+</body>
+</html>

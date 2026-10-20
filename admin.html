@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Admin Dashboard | CRUDLAB</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="dashboard-page">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-mark" href="index.html">CRUD<span>LAB</span></a>
+      <div class="ml-auto d-flex align-items-center"><span class="user-greeting mr-3 d-none d-sm-inline">Mode <strong>Admin</strong></span><a class="btn btn-outline-secondary btn-sm mr-2" href="index.html" target="_blank" rel="noopener">Lihat situs</a><button id="logoutBtn" class="btn btn-outline-secondary btn-sm">Keluar</button></div>
+    </div>
+  </nav>
+  <main class="container py-4 py-md-5">
+    <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4">
+      <div><p class="eyebrow mb-2">PANEL PENGELOLA</p><h1 class="h2 font-weight-bold mb-2">Kelola informasi</h1><p class="text-muted mb-0">Buat data, edit, hapus, dan atur apakah data tampil di halaman publik.</p></div>
+      <span class="demo-chip mt-3 mt-md-0"><span class="status-dot"></span> Admin demo</span>
+    </div>
+    <div class="row mb-4">
+      <div class="col-md-4 mb-3 mb-md-0"><div class="stat-card"><div class="stat-label">Total data</div><div class="stat-number" id="totalItems">0</div><div class="stat-caption">Semua data di browser ini</div></div></div>
+      <div class="col-md-4 mb-3 mb-md-0"><div class="stat-card"><div class="stat-label">Dipublikasikan</div><div class="stat-number" id="publishedItems">0</div><div class="stat-caption">Terlihat oleh pengunjung</div></div></div>
+      <div class="col-md-4"><div class="stat-card"><div class="stat-label">Draft</div><div class="stat-number" id="draftItems">0</div><div class="stat-caption">Hanya ada di panel admin</div></div></div>
+    </div>
+    <div id="pageAlert" class="alert d-none" role="alert"></div>
+    <section class="panel mb-4" id="editorPanel">
+      <div class="panel-heading"><div><p class="eyebrow mb-1" id="formEyebrow">FORM KONTEN</p><h2 class="h5 font-weight-bold mb-0" id="formTitle">Tambah informasi baru</h2></div><button id="cancelEditBtn" class="btn btn-sm btn-light d-none" type="button">Batal edit</button></div>
+      <div class="p-3 p-md-4">
+        <form id="itemForm">
+          <input type="hidden" id="itemId">
+          <div class="form-row">
+            <div class="form-group col-md-4"><label for="itemTitle">Judul</label><input class="form-control" id="itemTitle" maxlength="120" placeholder="Judul informasi" required></div>
+            <div class="form-group col-md-8"><label for="itemDescription">Deskripsi</label><textarea class="form-control" id="itemDescription" rows="3" maxlength="1500" placeholder="Tulis informasi yang akan dibaca pengunjung..." required></textarea></div>
+          </div>
+          <div class="form-row align-items-center">
+            <div class="form-group col-md-5 mb-md-0"><label for="itemImage">URL gambar (opsional)</label><input class="form-control" type="url" id="itemImage" placeholder="https://contoh.com/gambar.jpg"><small class="form-text text-muted">Gunakan URL gambar publik. Boleh dikosongkan.</small></div>
+            <div class="form-group col-md-4 mb-md-0"><div class="custom-control custom-checkbox mt-md-4 pt-md-2"><input type="checkbox" class="custom-control-input" id="itemPublished" checked><label class="custom-control-label" for="itemPublished">Tampilkan di landing page</label></div></div>
+            <div class="form-group col-md-3 mb-0 mt-3 mt-md-0"><button class="btn btn-primary btn-block" type="submit" id="saveBtn">+ Simpan informasi</button></div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="panel">
+      <div class="panel-heading flex-wrap"><div><p class="eyebrow mb-1">SEMUA KONTEN</p><h2 class="h5 font-weight-bold mb-0">Daftar informasi</h2></div><div class="search-wrap mt-3 mt-md-0"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" class="form-control form-control-sm" placeholder="Cari informasi..." aria-label="Cari informasi"></div></div>
+      <div class="table-responsive"><table class="table table-hover mb-0"><thead><tr><th>#</th><th>Informasi</th><th>Status</th><th>Dibuat</th><th>Aksi</th></tr></thead><tbody id="itemsTableBody"></tbody></table></div>
+      <div id="emptyState" class="empty-state"><div class="empty-icon">▤</div><h3 class="h6 font-weight-bold">Belum ada data</h3><p class="text-muted small mb-0">Tambahkan informasi melalui formulir di atas.</p></div>
+      <div class="panel-footer"><span id="resultCount">0 data</span><span>Landing page membaca data berstatus publikasi</span></div>
+    </section>
+    <p class="footer-note text-center mt-4 mb-0">CRUDLAB Admin · Demo lokal dengan localStorage</p>
+  </main>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
